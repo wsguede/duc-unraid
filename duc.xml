@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Name>DUC</Name>
+  <Description>
+	[b][u][span style='color: #E80000;']Description[/span][/u][/b][br]
+  Duc is a collection of tools for indexing, inspecting and visualizing disk usage. Duc maintains a database of accumulated sizes of directories of the file system, and allows you to query this database with some tools, or create fancy graphs showing you where your bytes are.[br]
+  [br]
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+  [b]/data[/b] This path is used to index your filesystem - strongly suggest READ ONLY[br][br]
+  [b][u][span style='color: #E80000;']Getting Started[/span][/u][/b][br]
+  Start by visiting the WebUI - it defaults to your http://yourserver:2382) and clicking "reindex" (be patient, it can take a few minutes (or longer) to run the full index.[br][br]
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/wsguede/duc/</Registry>
+  <GitHub>https://github.com/wsguede/duc-docker</GitHub>
+  <Repository>wsguede/duc</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+    <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>2382</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+<Environment>
+    <Variable>
+      <Name>DUC_CGI_OPTIONS</Name>
+      <Value>--list --tooltip --gradient</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>path for filesystem to index</HostDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:2382]</WebUI>
+  <Banner>http://imgur.com/8pZ36wP.png</Banner>
+  <Icon>http://imgur.com/uTz1RGO.png</Icon>
+</Containers>
