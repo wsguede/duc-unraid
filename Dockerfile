@@ -1,7 +1,8 @@
 FROM httpd:2.4.35-alpine
 MAINTAINER wsguede <wsguede@gmail.com>
 
-RUN apk add --update duc
+RUN apt-get update
+RUN apk-get install duc -y
 
 COPY ./index.html /usr/local/apache2/htdocs/
 
