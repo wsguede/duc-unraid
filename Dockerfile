@@ -24,8 +24,8 @@ RUN set -eux; \
 
 COPY ./index.html /usr/local/apache2/htdocs/
 
-COPY duc.cgi /usr/lib/cgi-bin/
-RUN chmod +x /usr/lib/cgi-bin/duc.cgi
+COPY ./duc.cgi /usr/local/apache2/cgi-bin
+RUN chmod +x /usr/local/apache2/cgi-bin/duc.cgi
 
 RUN duc index /data/ && chmod 777 ~/.duc.db
 
