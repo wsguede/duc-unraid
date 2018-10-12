@@ -10,9 +10,9 @@
   [b][u][span style='color: #E80000;']Getting Started[/span][/u][/b][br]
   Start by visiting the WebUI - it defaults to your http://yourserver:2382) and clicking "reindex" (be patient, it can take a few minutes (or longer) to run the full index.[br][br]
   </Description>
-  <Registry>https://registry.hub.docker.com/u/wsguede/duc/</Registry>
-  <GitHub>https://github.com/wsguede/duc-docker</GitHub>
-  <Repository>wsguede/duc</Repository>
+  <Registry>https://registry.gitlab.com/wsguede/duc-unraid</Registry>
+  <GitHub>https://gitlab.com/wsguede/duc-unraid</GitHub>
+  <Repository>wsguede/duc-unraid</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
     <Networking>
